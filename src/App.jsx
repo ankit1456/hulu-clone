@@ -25,8 +25,7 @@ const App = () => {
         });
       } else {
         dispatch({
-          type: "LOGIN",
-          payload: null,
+          type: "LOGOUT",
         });
       }
     });

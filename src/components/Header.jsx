@@ -9,12 +9,11 @@ import { useStateValue } from "../context/stateProvider";
 
 const Header = () => {
   const [{ user }, dispatch] = useStateValue();
-  const UserName = user?.displayName.split(" ")[0];
+  const username = user?.displayName.split(" ")[0];
 
   const handleLogout = () => {
     dispatch({
       type: "LOGOUT",
-      payload: null,
     });
   };
   return (
@@ -43,7 +42,7 @@ const Header = () => {
         </div>
         <div className="header__icon">
           <Avatar className="header__avatar" src={user?.photoURL} />
-          <p>{UserName}</p>
+          <p>{username}</p>
         </div>
         <p className="header__logout" onClick={handleLogout}>
           Log out

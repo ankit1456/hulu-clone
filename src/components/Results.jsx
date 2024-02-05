@@ -12,11 +12,11 @@ const Results = ({ selectedCategory }) => {
 
   useEffect(() => {
     async function fetchMovies() {
-      const request = await axios.get(selectedCategory);
-      setMovies(request.data.results);
-      setalternateMovie(request.data.results[0] || request.data.results[1]);
+      const response = await axios.get(selectedCategory);
+      setMovies(response.data.results);
+      setalternateMovie(response.data.results[0] || response.data.results[1]);
 
-      return request;
+      return response;
     }
     fetchMovies();
   }, [selectedCategory]);
@@ -24,7 +24,7 @@ const Results = ({ selectedCategory }) => {
   return (
     <div className="results">
       <FlipMove>
-        {movies.map((movie) => (
+        {movies?.map((movie) => (
           <VideoCard
             key={movie.id}
             movie={movie}
