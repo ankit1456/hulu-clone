@@ -1,0 +1,20 @@
+.app {
+  background-image: linear-gradient(to right, #051421, #042727);
+  height: 100%;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner__container {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
